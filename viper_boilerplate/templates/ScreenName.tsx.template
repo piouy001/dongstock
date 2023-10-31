@@ -1,0 +1,13 @@
+import React from "react";
+
+import usePresenter from "./ScreenName.presenter";
+import useRouter from "./ScreenName.router";
+
+const ScreenName = () => {
+  const router = useRouter();
+  const presenter = usePresenter(router);
+
+  return <></>;
+};
+
+export default ScreenName;

@@ -1,0 +1,9 @@
+export interface ScreenNameRouter {
+}
+
+const useRouter = (): ScreenNameRouter => {
+  // implement methods in router interface to navigate to other screens.
+  return {};
+};
+
+export default useRouter;

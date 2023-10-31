@@ -1,0 +1,11 @@
+import useInteractor from "./ScreenName.interactor";
+import { ScreenNameRouter } from "./ScreenName.router";
+
+const usePresenter = (router: ScreenNameRouter) => {
+  const interactor = useInteractor();
+
+  // view models, event handlers for the screen.
+  return {};
+};
+
+export default usePresenter;

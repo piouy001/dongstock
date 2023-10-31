@@ -5,7 +5,8 @@
   "main": "test.js",
   "scripts": {
     "dev": "copy .env.development .env && env-cmd -e dev webpack serve",
-    "production": "copy .env.production .env && env-cmd -e production yarn"
+    "production": "copy .env.production .env && env-cmd -e production yarn",
+    "viper": "node viper_boilerplate/viper.js"
   },
   "keywords": [],
   "author": "",
