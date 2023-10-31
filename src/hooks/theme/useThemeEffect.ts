@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import { useThemeDispatch, useThemeState } from "context/ThemeContext";
 
 export const useThemeEffect = () => {

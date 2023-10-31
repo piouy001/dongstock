@@ -1,5 +1,6 @@
-import { useThemeDispatch, useThemeState } from "context/ThemeContext";
 import { useTheme } from "./useTheme";
+
+import { useThemeDispatch, useThemeState } from "context/ThemeContext";
 
 export function useToggleTheme() {
   const dispatch = useThemeDispatch();

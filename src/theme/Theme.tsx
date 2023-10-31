@@ -1,5 +1,5 @@
-import { SemanticColors } from "./colors/types";
 import Colors from "./colors";
+import { SemanticColors } from "./colors/types";
 
 type Theme = "light" | "dark";
 type VariableKey = keyof SemanticColors;

@@ -2,11 +2,10 @@ import React from "react";
 import { styled } from "styled-components";
 
 import ThemeToggleButton from "components/common/button/ThemeToggleButton";
+
 import { DOMESTIC_URL, WORLDSTOCK_URL } from "constants/URLConstant";
 import { useToggleTheme } from "hooks/theme/useToggleTheme";
 import { typo_24_bold } from "theme/Typo";
-
-interface Props {}
 
 const navItems = [
   {
@@ -21,7 +20,7 @@ const navItems = [
   },
 ];
 
-const Header = ({}: Props): React.ReactNode => {
+const Header = (): React.ReactNode => {
   const [_, toggle] = useToggleTheme();
 
   return (

@@ -1,6 +1,7 @@
-import React, { Dispatch, useContext, useReducer } from "react";
 import { produce } from "immer";
-import { DefaultTheme, ThemeProvider } from "styled-components";
+import React, { Dispatch, useContext, useReducer } from "react";
+import { ThemeProvider } from "styled-components";
+
 import Colors from "theme/colors";
 
 type Theme = "dark" | "light" | "default";
@@ -59,7 +60,7 @@ export const ThemeContextProvider = ({ children }: { children: React.ReactNode }
 const ThemeContextInner = ({ children }: { children: React.ReactNode }) => {
   const { theme } = useThemeState();
 
-  const colors: DefaultTheme = (() => {
+  const colors = (() => {
     if (theme === "dark") {
       return {
         ...Colors.darkTheme,
