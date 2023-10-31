@@ -18,7 +18,7 @@ const config = {
   mode: NODE_ENV,
   devtool: isDev ? "source-map" : "hidden-source-map",
   entry: {
-    app: "./src/index.tsx",
+    app: ["./src/index.tsx"],
   },
   output: {
     filename: "[name].js",
@@ -26,15 +26,15 @@ const config = {
   },
   resolve: {
     modules: ["node_modules"],
-    extensions: [".js", ".jsx", ".ts", ".tsx"],
+    extensions: ["*", ".js", ".jsx", ".tsx", ".ts", ".css"],
   },
   module: {
     rules: [
       {
         test: /\.(ts|tsx)$/,
-        loader: "ts-loader",
-        options: {
-          transpileOnly: isDev,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
         },
       },
       {

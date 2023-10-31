@@ -1,11 +1,10 @@
 import React from "react";
-import { RouteProps } from "react-router-dom";
 
-import DomesticScreen from "./components/domestic/DomesticScreen";
-import WorldStockScreen from "./components/worldstock/WorldStockScreen";
+import DomesticScreen from "components/domestic/DomesticScreen";
+import WorldStockScreen from "components/worldstock/WorldStockScreen";
+import MainScreen from "components/main/MainScreen";
 
-import { DOMESTIC_URL, WORLDSTOCK_URL } from "./constants/URLConstant";
-import MainScreen from "./components/main/MainScreen";
+import { DOMESTIC_URL, WORLDSTOCK_URL } from "constants/URLConstant";
 
 const routes = [
   {
