@@ -1,9 +1,13 @@
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const path = require("path");
-const webpack = require("webpack");
+
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const webpack = require("webpack");
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -12,6 +16,23 @@ require("dotenv").config({ path: envFilePath });
 
 const { NODE_ENV } = process.env;
 
+const output = {
+  filename: "[name].js",
+  path: path.join(__dirname, "/dist"),
+  publicPath: "",
+};
+
+const setFileLoaderOptions = fileCategory => ({
+  name: resourcePath => {
+    if (resourcePath.includes("fonts") || resourcePath.includes("videos")) {
+      return "[name].[ext]";
+    }
+    return "[contenthash].[ext]";
+  },
+  publicPath: filename => `${output.publicPath}${fileCategory}/${filename}`,
+  outputPath: url => path.join(fileCategory, url),
+});
+
 const config = {
   name: "build",
   mode: NODE_ENV,
@@ -19,10 +40,7 @@ const config = {
   entry: {
     app: ["./src/index.tsx"],
   },
-  output: {
-    filename: "[name].js",
-    path: path.join(__dirname, "/dist"),
-  },
+  output,
   resolve: {
     modules: ["node_modules"],
     extensions: ["*", ".js", ".jsx", ".tsx", ".ts", ".css"],
@@ -44,8 +62,13 @@ const config = {
         test: /\.(webp|jpg|png|jpeg)$/,
         loader: "file-loader",
         options: {
-          name: "[name].[ext]?[hash]",
+          ...setFileLoaderOptions("images"),
+          limit: 5000,
         },
+      },
+      {
+        test: /\.svg$/,
+        use: { loader: "@svgr/webpack", options: { svgo: false, svgProps: { display: "flex" } } },
       },
     ],
   },

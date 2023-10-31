@@ -3,9 +3,9 @@ import { styled } from "styled-components";
 
 import ThemeToggleButton from "components/common/button/ThemeToggleButton";
 
-import { DOMESTIC_URL, WORLDSTOCK_URL } from "constants/URLConstant";
-import { useToggleTheme } from "hooks/theme/useToggleTheme";
-import { typo_24_bold } from "theme/Typo";
+import { typo_14_semibold, typo_18_bold } from "./../../theme/Typo";
+
+import { CALCULATOR_URL, DOMESTIC_URL, WORLDSTOCK_URL } from "constants/URLConstant";
 
 const navItems = [
   {
@@ -18,19 +18,25 @@ const navItems = [
     label: "해외주식",
     link: WORLDSTOCK_URL,
   },
+  {
+    key: "calculator",
+    label: "적립식 복리 계산기",
+    link: CALCULATOR_URL,
+  },
 ];
 
 const Header = (): React.ReactNode => {
-  const [_, toggle] = useToggleTheme();
-
   return (
     <Wrapper>
       <Container>
         <LeftSide>
-          <Logo>Logo</Logo>
+          <Logo>Dong 증권</Logo>
           <NavList>
             {navItems.map(item => (
-              <Nav key={item.key}>{item.label}</Nav>
+              <Nav key={item.key}>
+                <NavLabel>{item.label}</NavLabel>
+                <NavIndicator />
+              </Nav>
             ))}
           </NavList>
         </LeftSide>
@@ -53,31 +59,54 @@ const Wrapper = styled.div`
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   max-width: 1200px;
   width: 100%;
-  height: 64px;
+  height: 80px;
 `;
 const LeftSide = styled.div`
   display: flex;
   align-items: center;
 `;
 const Logo = styled.div`
-  padding: 0 36px;
   color: ${({ theme }) => theme.primaryContent};
-  ${typo_24_bold};
+  ${typo_18_bold};
+  cursor: pointer;
 `;
 const NavList = styled.div`
   display: flex;
+  align-items: center;
+  padding-left: 72px;
   color: ${({ theme }) => theme.primaryContent};
 `;
-const Nav = styled.div``;
+const Nav = styled.div`
+  position: relative;
+  margin: 0 8px;
+  cursor: pointer;
+`;
+const NavLabel = styled.div`
+  ${typo_14_semibold};
+`;
+const NavIndicator = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -30px;
+  width: 0;
+  height: 4px;
+  background: ${({ theme }) => theme.upperContent};
+  transition: width 0.3s ease;
+
+  ${Nav}:hover & {
+    width: 100%;
+  }
+`;
 const RightSide = styled.div`
   display: flex;
   align-items: center;
 `;
 const ButtonWrapper = styled.div``;
 const Search = styled.div`
+  margin-left: 16px;
   color: ${({ theme }) => theme.primaryContent};
 `;
 

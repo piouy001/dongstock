@@ -16,3 +16,7 @@
   font-weight: 700;
   src: url("./assets/fonts/Pretendard-Bold.woff") format("woff");
 }
+
+*{
+  box-sizing: border-box;
+}
