@@ -1,6 +1,5 @@
 const path = require("path");
 const webpack = require("webpack");
-const dotenv = require("dotenv");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
