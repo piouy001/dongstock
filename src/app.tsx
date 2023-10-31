@@ -1,3 +1,4 @@
+import Layout from "components/layout/Layout";
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -7,9 +8,9 @@ const router = createBrowserRouter(routes);
 
 const App = () => {
   return (
-    <>
+    <Layout>
       <RouterProvider router={router} />
-    </>
+    </Layout>
   );
 };
 
