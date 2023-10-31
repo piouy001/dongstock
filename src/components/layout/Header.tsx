@@ -1,17 +1,46 @@
 import React from "react";
 import { styled } from "styled-components";
 
+import ThemeToggleButton from "components/common/button/ThemeToggleButton";
+import { DOMESTIC_URL, WORLDSTOCK_URL } from "constants/URLConstant";
+import { useToggleTheme } from "hooks/theme/useToggleTheme";
+import { typo_24_bold } from "theme/Typo";
+
 interface Props {}
 
+const navItems = [
+  {
+    key: "domestic",
+    label: "국내주식",
+    link: DOMESTIC_URL,
+  },
+  {
+    key: "worldstock",
+    label: "해외주식",
+    link: WORLDSTOCK_URL,
+  },
+];
+
 const Header = ({}: Props): React.ReactNode => {
+  const [_, toggle] = useToggleTheme();
+
   return (
     <Wrapper>
       <Container>
         <LeftSide>
           <Logo>Logo</Logo>
-          <NavList>NavList</NavList>
+          <NavList>
+            {navItems.map(item => (
+              <Nav key={item.key}>{item.label}</Nav>
+            ))}
+          </NavList>
         </LeftSide>
-        <Search>Search</Search>
+        <RightSide>
+          <ButtonWrapper>
+            <ThemeToggleButton />
+          </ButtonWrapper>
+          <Search>Search</Search>
+        </RightSide>
       </Container>
     </Wrapper>
   );
@@ -32,9 +61,25 @@ const Container = styled.div`
 `;
 const LeftSide = styled.div`
   display: flex;
+  align-items: center;
 `;
-const Logo = styled.div``;
-const NavList = styled.div``;
-const Search = styled.div``;
+const Logo = styled.div`
+  padding: 0 36px;
+  color: ${({ theme }) => theme.primaryContent};
+  ${typo_24_bold};
+`;
+const NavList = styled.div`
+  display: flex;
+  color: ${({ theme }) => theme.primaryContent};
+`;
+const Nav = styled.div``;
+const RightSide = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const ButtonWrapper = styled.div``;
+const Search = styled.div`
+  color: ${({ theme }) => theme.primaryContent};
+`;
 
 export default Header;
