@@ -1,30 +1,24 @@
-# OSX
-.DS_Store
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# node.js
-node_modules/
-npm-debug.log
-yarn-error.log
+node_modules
+dist
+dist-ssr
+*.local
 
-# Environments
-*.env
-*.env.*
-
-# Lerna
-lerna-debug.log
-
-# yarn
-**/.yarn/cache
-**/.yarn/unplugged
-**/.yarn/build-state.yml
-**/.yarn/install-state.gz
-.pnp.js
-
-# VSCode
-**/.vscode/*
-!**/.vscode/launch.json
-
-# WebStorm
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
 .idea
-
-ios-licenses
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

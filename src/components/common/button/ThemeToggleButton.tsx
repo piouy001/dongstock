@@ -1,9 +1,10 @@
-import React from "react";
 import { useTransition, animated } from "react-spring";
 import styled from "styled-components";
 
-import { MoonIcon, SunIcon } from "assets/assetMap";
 import { useToggleTheme } from "hooks/theme/useToggleTheme";
+
+import MoonIcon from "assets/images/icon-moon.svg?react";
+import SunIcon from "assets/images/icon-sun.svg?react";
 
 const ThemeToggleButton = () => {
   const [theme, toggle] = useToggleTheme();

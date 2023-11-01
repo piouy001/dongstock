@@ -1,5 +1,3 @@
-import React from "react";
-
 import DomesticScreen from "components/domestic/DomesticScreen/DomesticScreen";
 import MainScreen from "components/main/MainScreen/MainScreen";
 import WorldStockScreen from "components/worldstock/WorldStockScreen/WorldStockScreen";

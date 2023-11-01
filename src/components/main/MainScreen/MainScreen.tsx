@@ -1,5 +1,4 @@
-import React from "react";
-
+import Layout from "components/layout/Layout";
 import usePresenter from "./MainScreen.presenter";
 import useRouter from "./MainScreen.router";
 
@@ -9,9 +8,7 @@ const MainScreen = () => {
 
   return (
     <>
-      <div>
-        <div>MainScreen</div>
-      </div>
+      <div>MainScreean</div>
     </>
   );
 };

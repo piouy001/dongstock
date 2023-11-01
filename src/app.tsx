@@ -1,4 +1,3 @@
-import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Layout from "components/layout/Layout";
@@ -26,6 +25,7 @@ const App = () => {
   };
 
   loadTheme();
+
   return (
     <RootContextProvider>
       <GlobalStyles />

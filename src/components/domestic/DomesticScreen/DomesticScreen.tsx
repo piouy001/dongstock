@@ -1,5 +1,3 @@
-import React from "react";
-
 import usePresenter from "./DomesticScreen.presenter";
 import useRouter from "./DomesticScreen.router";
 

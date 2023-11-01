@@ -1,16 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import App from "app";
+import App from "App";
+import { IS_DEVELOPMENT } from "constants/envConstants";
+import RootContextProvider from "context";
+import QueryClientProvider, { ReactQueryDevtools } from "queries/QueryClientProvider";
 
 import "./reset.css";
 import "./global.css";
 
-const rootElement = document.getElementById("root");
-if (!rootElement) throw new Error("Failed to find the root element");
-
-ReactDOM.createRoot(rootElement).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider>
+      <RootContextProvider>
+        <App />
+        {IS_DEVELOPMENT && <ReactQueryDevtools initialIsOpen={false} />}
+      </RootContextProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
 );

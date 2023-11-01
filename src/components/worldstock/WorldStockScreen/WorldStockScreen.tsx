@@ -1,5 +1,3 @@
-import React from "react";
-
 import usePresenter from "./WorldStockScreen.presenter";
 import useRouter from "./WorldStockScreen.router";
 

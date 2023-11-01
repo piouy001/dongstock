@@ -1,3 +1,4 @@
+import { useTheme } from "hooks/theme/useTheme";
 import { produce } from "immer";
 import React, { Dispatch, useContext, useReducer } from "react";
 import { ThemeProvider } from "styled-components";
@@ -58,7 +59,7 @@ export const ThemeContextProvider = ({ children }: { children: React.ReactNode }
 };
 
 const ThemeContextInner = ({ children }: { children: React.ReactNode }) => {
-  const { theme } = useThemeState();
+  const theme = useTheme();
 
   const colors = (() => {
     if (theme === "dark") {
