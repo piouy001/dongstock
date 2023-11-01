@@ -82,7 +82,7 @@ const createFolderIfNotExist = targetPath => {
 };
 
 const generateFiles = async () => {
-  const subpath = await question(`\nInput subpath under component folders (ex: domestic, worldstock):\n`);
+  const subpath = await question(`\nInput subpath under component folders (ex: common):\n`);
 
   const targetPath = path.join(COMPONENTS_PATH, subpath, screenName);
 

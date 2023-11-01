@@ -1,4 +1,3 @@
-import Layout from "components/layout/Layout";
 import usePresenter from "./MainScreen.presenter";
 import useRouter from "./MainScreen.router";
 
