@@ -1,17 +1,32 @@
 export interface SemanticColors {
-  primaryBackground: string;
-  secondaryBackground: string;
-  tertiaryBackground: string;
-  quarternaryBackground: string;
-
-  primaryContent: string;
-  secondaryContent: string;
-  tertiaryContent: string;
-  quarternaryContent: string;
-  upperContent: string;
-  fallingContent: string;
-
-  primaryBorder: string;
-  secondaryBorder: string;
-  tertiaryBorder: string;
+  background: string;
+  onBackground: string;
+  primary: string;
+  primaryHover: string;
+  primaryOutline: string;
+  primaryOutlineHover: string;
+  surface: string;
+  onSurface: string;
+  onSecondarySurface: string;
+  surfaceVariant: string;
+  surfaceVariantHover: string;
+  onSurfaceVariant: string;
+  surfaceVariantOutline: string;
+  surfaceVariantOutlineHover: string;
+  error: string;
+  errorAlpha: string;
+  outline: string;
+  primarySurface: string;
+  primarySurfacehover: string;
+  primarySurfaceoutline: string;
+  primarySurfaceoutlinehover: string;
+  overlayBackground: string;
+  white: string;
+  black: string;
+  alpha80: string;
+  alpha70: string;
+  alpha60: string;
+  alpha50: string;
+  alpha10: string;
+  alpha5: string;
 }

@@ -64,7 +64,6 @@ const IconButton = styled.button`
   position: relative;
 
   &:hover {
-    background: ${({ theme }) => theme.tertiaryBackground};
   }
 `;
 
@@ -76,7 +75,6 @@ const Positioner = styled.div`
 `;
 
 const SVGWrapper = styled.div`
-  color: ${({ theme }) => theme.primaryContent};
   svg {
     display: block;
   }

@@ -1,1 +1,1 @@
-export const TEMP_ENDPOINT = "/api/temp";
+export const TEMP_ENDPOINT = "";

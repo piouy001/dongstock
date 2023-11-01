@@ -40,7 +40,6 @@ const LeftSide = styled.div`
   align-items: center;
 `;
 const Logo = styled.div`
-  color: ${({ theme }) => theme.primaryContent};
   ${typo_18_bold};
   cursor: pointer;
 `;
@@ -51,7 +50,6 @@ const RightSide = styled.div`
 const ButtonWrapper = styled.div``;
 const Search = styled.div`
   margin-left: 16px;
-  color: ${({ theme }) => theme.primaryContent};
 `;
 
 export default Header;

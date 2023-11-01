@@ -9,7 +9,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://openapi.koreainvestment.com:9443",
+        target: "https://api.github.com/",
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, ""),
         secure: false,

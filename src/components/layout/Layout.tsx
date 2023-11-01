@@ -22,7 +22,6 @@ const Layout = ({ children }: Props): React.ReactNode => {
 
 const Wrapper = styled.div`
   min-height: 100vh;
-  background: ${({ theme }) => theme.primaryBackground};
 `;
 const Content = styled.div`
   max-width: 1200px;
