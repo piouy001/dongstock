@@ -20,6 +20,7 @@ const semanticColors = {
   primarySurfaceHover: "hsl(219, 40%, 21%)",
   primarySurfaceOutline: "hsl(219, 40%, 20%)",
   primarySurfaceOutlineHover: "hsl(220, 40%, 40%)",
+  overlayBackground: "hsla(220, 40%, 7%, 0.5)",
   white: "hsl(0, 0%, 100%)",
   black: "hsl(0, 0%, 0)",
   alpha80: "hsla(0, 0%, 100%, 0.8)",
@@ -28,7 +29,6 @@ const semanticColors = {
   alpha50: "hsla(0, 0%, 100%, 0.5)",
   alpha10: "hsla(0, 0%, 100%, 0.1)",
   alpha5: "hsla(0, 0%, 100%, 0.05)",
-  overlayBackground: "hsla(220, 40%, 7%, 0.5)",
 } as const;
 
 export default semanticColors;

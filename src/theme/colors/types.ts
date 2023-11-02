@@ -17,9 +17,9 @@ export interface SemanticColors {
   errorAlpha: string;
   outline: string;
   primarySurface: string;
-  primarySurfacehover: string;
-  primarySurfaceoutline: string;
-  primarySurfaceoutlinehover: string;
+  primarySurfaceHover: string;
+  primarySurfaceOutline: string;
+  primarySurfaceOutlineHover: string;
   overlayBackground: string;
   white: string;
   black: string;

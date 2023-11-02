@@ -13,20 +13,14 @@ const Layout = ({ children }: Props): React.ReactNode => {
   useThemeEffect();
 
   return (
-    <Wrapper>
+    <Container>
       <Header />
       <Content>{children}</Content>
-    </Wrapper>
+    </Container>
   );
 };
 
-const Wrapper = styled.div`
-  min-height: 100vh;
-`;
-const Content = styled.div`
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-`;
+const Container = styled.div``;
+const Content = styled.div``;
 
 export default Layout;
