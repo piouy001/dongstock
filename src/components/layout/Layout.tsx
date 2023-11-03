@@ -1,9 +1,8 @@
-import React from "react";
 import styled from "styled-components";
 
-import Header from "./Header";
-
 import { useThemeEffect } from "hooks/theme/useThemeEffect";
+
+import Header from "./Header";
 
 interface Props {
   children: React.ReactNode;
@@ -21,8 +20,11 @@ const Layout = ({ children }: Props): React.ReactNode => {
 };
 
 const Container = styled.div``;
-const Content = styled.div`
-  padding-top: 72px;
+const Content = styled.main`
+  max-width: 1280px;
+  width: 100%;
+  padding: 72px 16px 0;
+  margin: 0 auto;
 `;
 
 export default Layout;

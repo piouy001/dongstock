@@ -1,8 +1,6 @@
-import useTempQuery from "queries/temp/useTempQuery";
-
 const useInteractor = () => {
-  const query = useTempQuery();
-  console.log(query);
+  // Fetch all data you need for the screen.
+
   return {};
 };
 

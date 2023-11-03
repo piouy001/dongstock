@@ -5,11 +5,7 @@ const MainScreen = () => {
   const router = useRouter();
   const presenter = usePresenter(router);
 
-  return (
-    <>
-      <div>MainScreean</div>
-    </>
-  );
+  return <div>MainScreen</div>;
 };
 
 export default MainScreen;

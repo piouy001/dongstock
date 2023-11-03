@@ -2,11 +2,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Layout from "components/layout/Layout";
 
-import RootContextProvider from "context";
-import { useThemeDispatch } from "context/ThemeContext";
+import RootContextProvider from "contexts";
+import { useThemeDispatch } from "contexts/ThemeContext";
 import routes from "routeConfig";
 import GlobalStyles from "styles/GlobalStyles";
-import { useEffect } from "react";
 
 const router = createBrowserRouter(routes);
 
@@ -25,9 +24,7 @@ const App = () => {
     document.body.dataset.theme = theme;
   };
 
-  useEffect(() => {
-    loadTheme();
-  }, [loadTheme]);
+  loadTheme();
 
   return (
     <RootContextProvider>

@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
+
 import { styled } from "styled-components";
 
 import ThemeToggleButton from "components/common/button/ThemeToggleButton";
 
-import { typo_28_bold } from "styles/Typo";
 import { BackIcon, SearchIcon } from "assets/assetMap";
-import { DEVICES, isMobile } from "styles/devices";
-
-/**
- * 모바일 => 로고 토글버튼 다크모드 => 토글버튼 서치바
- * 태블릿 => 로고 서치바 다크모드
- */
+import { typo_28_bold } from "styles/Typo";
+import { DEVICES } from "styles/devices";
 
 const Header = (): React.ReactNode => {
   const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(false);
@@ -29,9 +25,9 @@ const Header = (): React.ReactNode => {
   }, []);
 
   return (
-    <Wrapper isActive={isHeaderActive}>
+    <Wrapper $isActive={isHeaderActive}>
       <Container>
-        <Logo isSearchBoxVisible={isSearchBoxVisible}>
+        <Logo $isSearchBoxVisible={isSearchBoxVisible}>
           <AccentLabel>Git</AccentLabel>
           <LogoLabel>Dong</LogoLabel>
         </Logo>
@@ -39,14 +35,14 @@ const Header = (): React.ReactNode => {
           <SearchToggleButton onClick={handleSearchButtonClick}>
             {isSearchBoxVisible ? <BackIcon /> : <SearchIcon />}
           </SearchToggleButton>
-          <SearchBox isActive={isSearchBoxVisible}>
+          <SearchBox $isActive={isSearchBoxVisible}>
             <SearchField placeholder="Search username*" />
             <SearchButton>
               <SearchIcon />
             </SearchButton>
           </SearchBox>
         </SearchContainer>
-        <ButtonContainer isSearchBoxVisible={isSearchBoxVisible}>
+        <ButtonContainer $isSearchBoxVisible={isSearchBoxVisible}>
           <ThemeToggleButton />
         </ButtonContainer>
       </Container>
@@ -54,7 +50,7 @@ const Header = (): React.ReactNode => {
   );
 };
 
-const Wrapper = styled.header<{ isActive: boolean }>`
+const Wrapper = styled.header<{ $isActive: boolean }>`
   position: fixed;
   left: 0;
   top: 0;
@@ -63,7 +59,7 @@ const Wrapper = styled.header<{ isActive: boolean }>`
   align-items: center;
   width: 100%;
   height: 72px;
-  background: ${({ theme, isActive }) => (isActive ? theme.surface : theme.background)};
+  background: ${({ theme, $isActive }) => ($isActive ? theme.surface : theme.background)};
   transition: background-color 0.15s cubic-bezier(0.14, 0.97, 0.59, 1);
 `;
 const Container = styled.div`
@@ -76,9 +72,9 @@ const Container = styled.div`
   padding-inline: 16px;
 `;
 
-const Logo = styled.div<{ isSearchBoxVisible: boolean }>`
+const Logo = styled.div<{ $isSearchBoxVisible: boolean }>`
   @media ${DEVICES.mobile} {
-    display: ${({ isSearchBoxVisible }) => (isSearchBoxVisible ? "none" : "block")};
+    display: ${({ $isSearchBoxVisible }) => ($isSearchBoxVisible ? "none" : "block")};
   }
 `;
 const LogoLabel = styled.span`
@@ -88,9 +84,9 @@ const LogoLabel = styled.span`
 const AccentLabel = styled(LogoLabel)`
   color: ${({ theme }) => theme.primary};
 `;
-const ButtonContainer = styled.div<{ isSearchBoxVisible: boolean }>`
+const ButtonContainer = styled.div<{ $isSearchBoxVisible: boolean }>`
   @media ${DEVICES.mobile} {
-    display: ${({ isSearchBoxVisible }) => (isSearchBoxVisible ? "none" : "block")};
+    display: ${({ $isSearchBoxVisible }) => ($isSearchBoxVisible ? "none" : "block")};
   }
 `;
 const SearchContainer = styled.div`
@@ -100,10 +96,10 @@ const SearchContainer = styled.div`
   gap: 8px;
   flex-grow: 1;
 `;
-const SearchBox = styled.div<{ isActive: boolean }>`
+const SearchBox = styled.div<{ $isActive: boolean }>`
   position: relative;
   overflow: hidden;
-  display: ${({ isActive }) => (isActive ? "block" : "none")};
+  display: ${({ $isActive }) => ($isActive ? "block" : "none")};
   flex-grow: 1;
   border-radius: 100px;
 `;

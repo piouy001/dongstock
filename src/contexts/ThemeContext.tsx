@@ -1,8 +1,9 @@
-import { useTheme } from "hooks/theme/useTheme";
-import { produce } from "immer";
 import React, { Dispatch, useContext, useReducer } from "react";
+
+import { produce } from "immer";
 import { ThemeProvider } from "styled-components";
 
+import { useTheme } from "hooks/theme/useTheme";
 import Colors from "theme/colors";
 
 type Theme = "dark" | "light" | "default";

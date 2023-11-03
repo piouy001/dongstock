@@ -1,5 +1,5 @@
 enum QUERY_KEY_NAMESPACE {
-  Temp = "temp",
+  User = "user",
 }
 
 export default QUERY_KEY_NAMESPACE;

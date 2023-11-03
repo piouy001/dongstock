@@ -1,6 +1,6 @@
-export interface MainScreenRouter {}
+export interface UserScreenRouter {}
 
-const useRouter = (): MainScreenRouter => {
+const useRouter = (): UserScreenRouter => {
   // implement methods in router interface to navigate to other screens.
   return {};
 };

@@ -1,1 +1,1 @@
-export const TEMP_ENDPOINT = "";
+export const USER_ENDPOINT = "users";
