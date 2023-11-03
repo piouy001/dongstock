@@ -5,7 +5,23 @@ import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   base: "./",
-  plugins: [react(), tsconfigPaths(), svgr()],
+  plugins: [
+    react({
+      babel: {
+        plugins: [
+          [
+            "babel-plugin-styled-components",
+            {
+              displayName: true,
+              fileName: false,
+            },
+          ],
+        ],
+      },
+    }),
+    tsconfigPaths(),
+    svgr(),
+  ],
   server: {
     proxy: {
       "/api": {
