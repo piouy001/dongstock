@@ -23,6 +23,11 @@
     "baseUrl": "./src",
     "types": ["vite-plugin-svgr/client"]
   },
+  "settings":{
+    "import/resolver":{
+      "typescript":{}
+    }
+  },
   "include": ["src/**/*","declaration.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
