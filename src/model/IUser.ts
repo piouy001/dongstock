@@ -1,6 +1,6 @@
-export interface IUserData {
-  login: string;
+export interface IBaseUserData {
   id: number;
+  login: string;
   node_id: string;
   avatar_url: string;
   gravatar_id: string;
@@ -17,23 +17,9 @@ export interface IUserData {
   received_events_url: string;
   type: string;
   site_admin: boolean;
-  name: string;
-  company: string;
-  blog: string;
-  location: string;
-  email: string;
-  hireable: boolean;
-  bio: string;
-  twitter_username: string;
-  public_repos: number;
-  public_gists: number;
-  followers: number;
-  following: number;
-  created_at: string;
-  updated_at: string;
 }
 
-export class User {
+export class BaseUser {
   login: string;
   id: number;
   nodeId: string;
@@ -52,22 +38,8 @@ export class User {
   receivedEventsUrl: string;
   type: string;
   siteAdmin: boolean;
-  name: string;
-  company: string;
-  blog: string;
-  location: string;
-  email: string;
-  hireable: boolean;
-  bio: string;
-  twitterUsername: string;
-  publicRepos: number;
-  publicGists: number;
-  followers: number;
-  following: number;
-  createdAt: string;
-  updatedAt: string;
 
-  constructor(data: IUserData) {
+  constructor(data: IBaseUserData) {
     this.login = data.login;
     this.id = data.id;
     this.nodeId = data.node_id;
@@ -86,6 +58,45 @@ export class User {
     this.receivedEventsUrl = data.received_events_url;
     this.type = data.type;
     this.siteAdmin = data.site_admin;
+  }
+}
+
+export interface IUserData extends IBaseUserData {
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  hireable: boolean;
+  bio: string;
+  twitter_username: string;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export class User extends BaseUser {
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  hireable: boolean;
+  bio: string;
+  twitterUsername: string;
+  publicRepos: number;
+  publicGists: number;
+  followers: number;
+  following: number;
+  createdAt: string;
+  updatedAt: string;
+
+  constructor(data: IUserData) {
+    super(data);
+
     this.name = data.name;
     this.company = data.company;
     this.blog = data.blog;

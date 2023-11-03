@@ -1,7 +1,7 @@
 import MainScreen from "components/main/MainScreen/MainScreen";
 import UserScreen from "components/user/UserScreen/UserScreen";
 
-import { HOME_URL, USER_URL } from "constants/URLConstant";
+import { HOME_URL } from "constants/URLConstant";
 
 const routes = [
   {
@@ -9,7 +9,7 @@ const routes = [
     element: <MainScreen />,
   },
   {
-    path: USER_URL,
+    path: "/:userName",
     element: <UserScreen />,
   },
 ];

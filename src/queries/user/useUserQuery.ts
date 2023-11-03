@@ -12,7 +12,7 @@ const fetchUser = async (userName: string): Promise<User> => {
 };
 
 const useUserQuery = (userName: string) => {
-  const query = useQuery(userKey.user, () => fetchUser(userName));
+  const query = useQuery(userKey.user(userName), () => fetchUser(userName));
 
   return { ...query, user: query.data };
 };

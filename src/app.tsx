@@ -1,7 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Layout from "components/layout/Layout";
-
 import RootContextProvider from "contexts";
 import { useThemeDispatch } from "contexts/ThemeContext";
 import routes from "routeConfig";
@@ -29,9 +27,7 @@ const App = () => {
   return (
     <RootContextProvider>
       <GlobalStyles />
-      <Layout>
-        <RouterProvider router={router} />
-      </Layout>
+      <RouterProvider router={router} />
     </RootContextProvider>
   );
 };

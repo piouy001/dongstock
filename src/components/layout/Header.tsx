@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from "react";
 
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 import ThemeToggleButton from "components/common/button/ThemeToggleButton";
 
 import { BackIcon, SearchIcon } from "assets/assetMap";
+import { HOME_URL } from "constants/URLConstant";
 import { typo_28_bold } from "styles/Typo";
 import { DEVICES } from "styles/devices";
 
 const Header = (): React.ReactNode => {
+  const navigate = useNavigate();
   const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(false);
   const [isHeaderActive, setIsHeaderActive] = useState(false);
+
+  const handleLogoClick = () => {
+    navigate(HOME_URL);
+  };
 
   const handleSearchButtonClick = () => {
     setIsSearchBoxVisible(prev => !prev);
@@ -27,7 +34,7 @@ const Header = (): React.ReactNode => {
   return (
     <Wrapper $isActive={isHeaderActive}>
       <Container>
-        <Logo $isSearchBoxVisible={isSearchBoxVisible}>
+        <Logo $isSearchBoxVisible={isSearchBoxVisible} onClick={handleLogoClick}>
           <AccentLabel>Git</AccentLabel>
           <LogoLabel>Dong</LogoLabel>
         </Logo>

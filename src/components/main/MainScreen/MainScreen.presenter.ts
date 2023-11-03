@@ -2,10 +2,12 @@ import useInteractor from "./MainScreen.interactor";
 import { MainScreenRouter } from "./MainScreen.router";
 
 const usePresenter = (router: MainScreenRouter) => {
-  const interactor = useInteractor();
+  const { users } = useInteractor();
 
-  // view models, event handlers for the screen.
-  return {};
+  const handleUserItemClick = (username: string) => {
+    router.navigateToUserScreen(username);
+  };
+  return { users, onUserItemClick: handleUserItemClick };
 };
 
 export default usePresenter;
