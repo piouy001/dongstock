@@ -36,11 +36,13 @@ const Header = (): React.ReactNode => {
 
   const handleKeyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      handleSearchClick();
+      handleSearchAction();
     }
   };
 
-  const handleSearchClick = () => {
+  const handleSearchAction = () => {
+    if (userName === "") return;
+
     navigate(`/${userName}`);
   };
 
@@ -73,7 +75,7 @@ const Header = (): React.ReactNode => {
               onKeyUp={handleKeyUp}
               placeholder="Search username*"
             />
-            <SearchButton onClick={handleSearchClick}>
+            <SearchButton onClick={handleSearchAction}>
               <SearchIcon />
               <SearchButtonLabel>Search</SearchButtonLabel>
               <ResetIconWrapper $isVisible={isResetButtonVisible} onClick={handleResetClick}>
