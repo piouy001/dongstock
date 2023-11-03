@@ -119,7 +119,6 @@ const Container = styled.div`
     padding-inline: 16px;
   }
 `;
-
 const Logo = styled.div<{ $isSearchBoxVisible: boolean }>`
   cursor: pointer;
 

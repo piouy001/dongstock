@@ -7,6 +7,7 @@ const usePresenter = (router: UserScreenRouter) => {
   // view models, event handlers for the screen.
   return {
     user: interactor.user,
+    isLoading: interactor.isLoading,
   };
 };
 

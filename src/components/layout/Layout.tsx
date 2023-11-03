@@ -24,11 +24,11 @@ const Container = styled.div``;
 const Content = styled.main`
   max-width: 1280px;
   width: 100%;
-  padding: 80px 16px 0;
+  padding: 80px 32px 0;
   margin: 0 auto;
 
   @media ${DEVICES.mobile} {
-    padding-top: 72px;
+    padding: 72px 16px 0;
   }
 `;
 

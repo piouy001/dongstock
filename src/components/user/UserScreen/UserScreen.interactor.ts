@@ -9,6 +9,7 @@ const useInteractor = () => {
 
   return {
     user: query.user,
+    isLoading: query.isLoading,
   };
 };
 
