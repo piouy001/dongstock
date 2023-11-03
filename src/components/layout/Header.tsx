@@ -106,6 +106,8 @@ const Container = styled.div`
 `;
 
 const Logo = styled.div<{ $isSearchBoxVisible: boolean }>`
+  cursor: pointer;
+
   @media ${DEVICES.mobile} {
     display: ${({ $isSearchBoxVisible }) => ($isSearchBoxVisible ? "none" : "block")};
   }
