@@ -21,6 +21,8 @@ const Layout = ({ children }: Props): React.ReactNode => {
 };
 
 const Container = styled.div``;
-const Content = styled.div``;
+const Content = styled.div`
+  padding-top: 72px;
+`;
 
 export default Layout;

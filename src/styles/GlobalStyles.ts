@@ -5,7 +5,7 @@ import { themes } from "../theme/Theme";
 const GlobalStyles = createGlobalStyle`
 body {
   ${themes.light}
-  transition: 0.125s all ease-in;
+  transition: all 0.15s cubic-bezier(0.14, 0.97, 0.59, 1);
 }
 
 @media (prefers-color-scheme: dark) {

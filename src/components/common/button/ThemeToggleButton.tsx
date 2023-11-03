@@ -2,9 +2,7 @@ import { useTransition, animated } from "react-spring";
 import styled from "styled-components";
 
 import { useToggleTheme } from "hooks/theme/useToggleTheme";
-
-import MoonIcon from "assets/images/icon-moon.svg?react";
-import SunIcon from "assets/images/icon-sun.svg?react";
+import { MoonIcon, SunIcon } from "assets/assetMap";
 
 const ThemeToggleButton = () => {
   const [theme, toggle] = useToggleTheme();
@@ -32,54 +30,51 @@ const ThemeToggleButton = () => {
   });
 
   return (
-    <IconButton onClick={toggle}>
+    <ButtonContainer onClick={toggle}>
       {transitions((style, item) =>
         item ? (
-          <Positioner>
+          <IconButton>
             <AnimatedSVGWrapper style={style}>
               <MoonIcon />
             </AnimatedSVGWrapper>
-          </Positioner>
+          </IconButton>
         ) : (
-          <Positioner>
+          <IconButton>
             <AnimatedSVGWrapper style={style}>
               <SunIcon />
             </AnimatedSVGWrapper>
-          </Positioner>
+          </IconButton>
         ),
       )}
-    </IconButton>
+    </ButtonContainer>
   );
 };
 
-const IconButton = styled.button`
-  background: none;
-  border: none;
-  cursor: pointer;
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-right: 0.25rem;
-  color: white;
+const ButtonContainer = styled.button`
   position: relative;
+  width: 48px;
+  height: 48px;
+  background: ${({ theme }) => theme.surfaceVariant};
+  border-radius: 50%;
+  border: 1px solid ${({ theme }) => theme.surfaceVariantOutline};
+  color: ${({ theme }) => theme.onBackground};
 
   &:hover {
+    background: ${({ theme }) => theme.surfaceVariantHover};
+    border-color: ${({ theme }) => theme.surfaceVariantOutlineHover};
   }
 `;
-
-const Positioner = styled.div`
+const IconButton = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 `;
-
 const SVGWrapper = styled.div`
   svg {
     display: block;
   }
 `;
-
 const AnimatedSVGWrapper = animated(SVGWrapper);
 
 export default ThemeToggleButton;
