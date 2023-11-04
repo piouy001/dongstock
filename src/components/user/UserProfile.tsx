@@ -108,11 +108,9 @@ const Profile = styled.div`
   margin-block-end: 0;
   position: sticky;
   top: 80px;
-  padding-inline: 32px;
 
   @media ${DEVICES.mobile} {
     position: initial;
-    padding-inline: 16px;
   }
 `;
 const Avatar = styled.figure<{ $isUser: boolean }>`

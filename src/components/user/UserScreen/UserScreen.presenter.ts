@@ -8,6 +8,7 @@ const usePresenter = (router: UserScreenRouter) => {
   return {
     user: interactor.user,
     isLoading: interactor.isLoading,
+    repositories: interactor.repositories,
   };
 };
 

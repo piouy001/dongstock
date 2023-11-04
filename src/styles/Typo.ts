@@ -4,6 +4,12 @@ export const typo_base_setup = css`
   font-family: "Pretendard";
   font-style: normal;
 `;
+export const typo_48_bold = css`
+  ${typo_base_setup}
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 72px;
+`;
 export const typo_32_semibold = css`
   ${typo_base_setup}
   font-weight: 600;
