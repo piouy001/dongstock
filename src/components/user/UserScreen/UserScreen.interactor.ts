@@ -1,11 +1,10 @@
 import { useParams } from "react-router-dom";
 
-import { DEFAULT_USER_ID } from "constants/user";
 import useUserQuery from "queries/user/useUserQuery";
 
 const useInteractor = () => {
   const { userName } = useParams();
-  const query = useUserQuery(userName ?? DEFAULT_USER_ID);
+  const query = useUserQuery(userName ?? "");
 
   return {
     user: query.user,

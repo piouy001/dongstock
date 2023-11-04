@@ -30,7 +30,7 @@ const LoadingIndicatorWrapper = styled.div`
   width: 100%;
   height: 4px;
   background: ${({ theme }) => theme.background};
-  z-index: 100;
+  z-index: 200;
 `;
 const indeterminateFirst = keyframes`
 	 0% {

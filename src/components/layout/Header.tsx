@@ -103,7 +103,7 @@ const Wrapper = styled.header<{ $isActive: boolean }>`
   height: 80px;
   background: ${({ theme, $isActive }) => ($isActive ? theme.surface : theme.background)};
   transition: background-color 0.15s cubic-bezier(0.14, 0.97, 0.59, 1);
-
+  z-index: 100;
   @media ${DEVICES.mobile} {
     height: 72px;
   }

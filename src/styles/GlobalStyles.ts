@@ -25,9 +25,6 @@ body[data-theme='dark'] {
 body{
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.onBackground};
-  min-height: 100vh;
-  min-height: 100dvh;
-  height: 300vh;
 }
 
 ::-webkit-scrollbar-thumb {

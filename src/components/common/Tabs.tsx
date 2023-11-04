@@ -12,7 +12,7 @@ const Tabs = (): React.ReactNode => {
   return (
     <Container>
       <Item>
-        <Label>1</Label>
+        <Label>Tab</Label>
       </Item>
     </Container>
   );

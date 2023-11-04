@@ -1,1 +1,4 @@
-export const DEFAULT_USER_ID = "facebook";
+export const enum UserType {
+  User = "User",
+  Organization = "Organization",
+}
