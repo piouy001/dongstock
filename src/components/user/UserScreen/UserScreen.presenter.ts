@@ -8,6 +8,10 @@ const usePresenter = (router: UserScreenRouter) => {
     router.navigateToUserScreen(userName);
   };
 
+  const handleErrorRedirect = () => {
+    router.navigateToErrorScreen();
+  };
+
   return {
     user: interactor.user,
     isLoading: interactor.isLoading,
@@ -15,6 +19,7 @@ const usePresenter = (router: UserScreenRouter) => {
     followers: interactor.followers,
     following: interactor.following,
     onUserCardClick: handleUserCardClick,
+    onErrorRedirect: handleErrorRedirect,
   };
 };
 

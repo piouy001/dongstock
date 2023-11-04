@@ -12,7 +12,10 @@ import UserTab from "../UserTab";
 
 const UserScreen = () => {
   const router = useRouter();
-  const { isLoading, user, repositories, followers, following, onUserCardClick } = usePresenter(router);
+  const { isLoading, user, repositories, followers, following, onUserCardClick, onErrorRedirect } =
+    usePresenter(router);
+
+  if (!user) onErrorRedirect();
 
   return (
     <LoadingWrapper isLoading={isLoading}>

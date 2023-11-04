@@ -1,7 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
+import { ERROR_URL } from "constants/URLConstant";
+
 export interface UserScreenRouter {
   navigateToUserScreen: (username: string) => void;
+  navigateToErrorScreen: () => void;
 }
 
 const useRouter = (): UserScreenRouter => {
@@ -11,7 +14,11 @@ const useRouter = (): UserScreenRouter => {
     navigate(`/${userName}`);
   };
 
-  return { navigateToUserScreen };
+  const navigateToErrorScreen = () => {
+    navigate(ERROR_URL);
+  };
+
+  return { navigateToUserScreen, navigateToErrorScreen };
 };
 
 export default useRouter;
