@@ -16,7 +16,7 @@ interface Props {
 }
 
 const RepositoryPannel = ({ items }: Props): React.ReactNode => {
-  if (!items.length) return <ErrorContent />;
+  if (!items.length) return <ErrorContent text="Doesn't have any repositories yet." />;
 
   return (
     <Pannel>

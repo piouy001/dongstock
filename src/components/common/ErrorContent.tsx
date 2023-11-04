@@ -4,11 +4,15 @@ import styled from "styled-components";
 
 import { typo_14_regular, typo_48_bold } from "styles/Typo";
 
-const ErrorContent = (): React.ReactNode => {
+interface Props {
+  text: string;
+}
+
+const ErrorContent = ({ text }: Props): React.ReactNode => {
   return (
     <Wrapper>
       <Title>Oops! :(</Title>
-      <Description>Doesn&apos;t have any forked repositories yet.</Description>
+      <Description>{text}</Description>
     </Wrapper>
   );
 };

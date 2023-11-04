@@ -7,7 +7,7 @@ import ErrorContent from "./ErrorContent";
 const ErrorScreen = (): React.ReactNode => {
   return (
     <Layout>
-      <ErrorContent />
+      <ErrorContent text="This user doesn't exist." />
     </Layout>
   );
 };

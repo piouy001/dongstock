@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import Layout from "components/layout/Layout";
+import FollowPannel from "components/user/FollowPannel";
 
 import usePresenter from "./MainScreen.presenter";
 import useRouter from "./MainScreen.router";
@@ -11,34 +12,12 @@ const MainScreen = () => {
 
   return (
     <Layout>
-      <List>
-        {users.map(user => (
-          <ListItem
-            key={user.id}
-            onClick={() => {
-              onUserItemClick(user.login);
-            }}
-          >
-            {user.login}
-          </ListItem>
-        ))}
-      </List>
+      <Title>Recommended User</Title>
+      <FollowPannel items={users} onUserCardClick={onUserItemClick} />
     </Layout>
   );
 };
 
-const List = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-const ListItem = styled.div`
-  width: 200px;
-  padding: 16px;
-  border-radius: 100px;
-  border: 1px solid ${({ theme }) => theme.surfaceVariantOutline};
-  color: ${({ theme }) => theme.onBackground};
-  cursor: pointer;
-`;
+const Title = styled.h1``;
 
 export default MainScreen;

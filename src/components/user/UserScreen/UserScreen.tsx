@@ -15,20 +15,23 @@ const UserScreen = () => {
   const { isLoading, user, repositories, followers, following, onUserCardClick, onErrorRedirect } =
     usePresenter(router);
 
-  if (!user) onErrorRedirect();
+  if (!isLoading && !user) onErrorRedirect();
 
   return (
     <LoadingWrapper isLoading={isLoading}>
       <Layout>
-        <Container>
-          <UserProfile user={user} />
-          <UserTab
-            repositories={repositories}
-            followers={followers}
-            following={following}
-            onUserCardClick={onUserCardClick}
-          />
-        </Container>
+        {isLoading && <></>}
+        {!isLoading && (
+          <Container>
+            <UserProfile user={user} />
+            <UserTab
+              repositories={repositories}
+              followers={followers}
+              following={following}
+              onUserCardClick={onUserCardClick}
+            />
+          </Container>
+        )}
       </Layout>
     </LoadingWrapper>
   );
