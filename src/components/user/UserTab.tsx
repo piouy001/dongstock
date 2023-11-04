@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import { UserTabType } from "constants/user";
 import { Repository } from "model/IRepository";
+import { BaseUser } from "model/IUser";
 import { typo_14_regular, typo_14_semibold } from "styles/Typo";
 
 import FollowPannel from "./FollowPannel";
@@ -30,18 +31,23 @@ const TAB_LIST = [
 
 interface Props {
   repositories: Repository[];
+  followers: BaseUser[];
+  following: BaseUser[];
+  onUserCardClick: (userName: string) => void;
 }
 
-const UserTab = ({ repositories }: Props): React.ReactNode => {
+const UserTab = ({ repositories, followers, following, onUserCardClick }: Props): React.ReactNode => {
   const [tabValue, setTabValue] = useState(UserTabType.Repositories);
 
   const forkedRepositories = repositories.filter(repository => repository.fork);
   const isRepositoriesTab = tabValue === UserTabType.Repositories || tabValue === UserTabType.Forked;
-  const repositoriesByTab: Record<number, Repository[]> = {
+  const pannelDataByTab: Record<UserTabType, Repository[] | BaseUser[]> = {
     [UserTabType.Repositories]: repositories,
     [UserTabType.Forked]: forkedRepositories,
+    [UserTabType.Followers]: followers,
+    [UserTabType.Following]: following,
   };
-  const repositoriesData = repositoriesByTab[tabValue];
+  const pannelData = pannelDataByTab[tabValue];
 
   const handleTabClick = (value: UserTabType) => {
     setTabValue(value);
@@ -62,8 +68,8 @@ const UserTab = ({ repositories }: Props): React.ReactNode => {
           </Tab>
         ))}
       </TabList>
-      {isRepositoriesTab && <RepositoryPannel items={repositoriesData} />}
-      {!isRepositoriesTab && <FollowPannel />}
+      {isRepositoriesTab && <RepositoryPannel items={pannelData as Repository[]} />}
+      {!isRepositoriesTab && <FollowPannel items={pannelData as BaseUser[]} onUserCardClick={onUserCardClick} />}
     </Container>
   );
 };

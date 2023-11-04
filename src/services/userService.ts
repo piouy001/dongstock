@@ -21,4 +21,12 @@ const getRepositories = (userName: string) => {
   });
 };
 
-export default { getUser, getUsers, getRepositories };
+const getFollowers = (userName: string) => {
+  return http.get<IBaseUserData[]>(`${USER_ENDPOINT}/${userName}/followers`);
+};
+
+const getFollowing = (userName: string) => {
+  return http.get<IBaseUserData[]>(`${USER_ENDPOINT}/${userName}/following`);
+};
+
+export default { getUser, getUsers, getRepositories, getFollowers, getFollowing };

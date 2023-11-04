@@ -12,14 +12,19 @@ import UserTab from "../UserTab";
 
 const UserScreen = () => {
   const router = useRouter();
-  const { isLoading, user, repositories } = usePresenter(router);
+  const { isLoading, user, repositories, followers, following, onUserCardClick } = usePresenter(router);
 
   return (
     <LoadingWrapper isLoading={isLoading}>
       <Layout>
         <Container>
           <UserProfile user={user} />
-          <UserTab repositories={repositories} />
+          <UserTab
+            repositories={repositories}
+            followers={followers}
+            following={following}
+            onUserCardClick={onUserCardClick}
+          />
         </Container>
       </Layout>
     </LoadingWrapper>
