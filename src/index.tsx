@@ -2,9 +2,10 @@ import React from "react";
 
 import { createRoot } from "react-dom/client";
 
-import App from "App";
 import { IS_DEVELOPMENT } from "constants/envConstants";
 import QueryClientProvider, { ReactQueryDevtools } from "queries/QueryClientProvider";
+
+import App from "./App";
 
 import "./reset.css";
 import "./global.css";

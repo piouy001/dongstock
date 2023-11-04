@@ -7,7 +7,7 @@ import Footer from "components/common/Footer";
 import { CompanyIcon, ExploreIcon, LinkIcon, RegionIcon, TwitterIcon } from "assets/assetMap";
 import { UserType } from "constants/user";
 import { User } from "model/IUser";
-import { typo_14_regular, typo_14_semibold, typo_16_medium, typo_16_regular, typo_24_bold } from "styles/Typo";
+import { typo_14_regular, typo_14_semibold, typo_16_medium, typo_24_bold } from "styles/Typo";
 import { DEVICES } from "styles/devices";
 import { toFormattedThousands } from "utils/number";
 

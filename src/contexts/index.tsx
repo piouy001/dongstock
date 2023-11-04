@@ -1,5 +1,7 @@
 import { ThemeContextProvider } from "./ThemeContext";
 
+type ProviderType = ({ children }: { children: React.ReactNode }) => JSX.Element;
+
 const composeProvider = (
   contextProviders: (ProviderType | React.FC | React.ComponentClass)[],
   children: React.ReactNode,
