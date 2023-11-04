@@ -24,7 +24,7 @@ const Container = styled.div``;
 const Content = styled.main`
   max-width: 1280px;
   width: 100%;
-  padding: 80px 32px 0;
+  padding-top: 80px;
   margin: 0 auto;
   min-height: 100vh;
   min-height: 100dvh;
@@ -32,7 +32,7 @@ const Content = styled.main`
   height: 300vh;
 
   @media ${DEVICES.mobile} {
-    padding: 72px 16px 0;
+    padding-top: 72px;
   }
 `;
 

@@ -107,10 +107,12 @@ const UserProfile = ({ user }: Props): React.ReactNode => {
 const Profile = styled.div`
   margin-block-end: 0;
   position: sticky;
-  top: 96px;
+  top: 80px;
+  padding-inline: 32px;
 
   @media ${DEVICES.mobile} {
     position: initial;
+    padding-inline: 16px;
   }
 `;
 const Avatar = styled.figure<{ $isUser: boolean }>`
@@ -199,10 +201,11 @@ const MetaLabel = styled.a<{ $isLink: boolean }>`
 const StatList = styled.div``;
 const Stat = styled.div`
   display: flex;
+  align-items: center;
   gap: 8px;
   margin-block: 8px;
   color: ${({ theme }) => theme.onSurfaceVariant};
-  ${typo_16_regular};
+  ${typo_14_semibold};
 `;
 const StatBody = styled.div`
   color: ${({ theme }) => theme.onBackground};

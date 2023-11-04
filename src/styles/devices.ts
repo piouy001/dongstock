@@ -1,6 +1,6 @@
 export const SIZES = {
   mobile: 768,
-  desktop: 1200,
+  desktop: 992,
 };
 
 export const isMobile = () => window.matchMedia(`screen and (max-width: ${SIZES.mobile}px)`).matches;

@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import Layout from "components/layout/Layout";
 
+import { DEVICES } from "styles/devices";
+
 import usePresenter from "./MainScreen.presenter";
 import useRouter from "./MainScreen.router";
 
@@ -11,22 +13,31 @@ const MainScreen = () => {
 
   return (
     <Layout>
-      <List>
-        {users.map(user => (
-          <ListItem
-            key={user.id}
-            onClick={() => {
-              onUserItemClick(user.login);
-            }}
-          >
-            {user.login}
-          </ListItem>
-        ))}
-      </List>
+      <Container>
+        <List>
+          {users.map(user => (
+            <ListItem
+              key={user.id}
+              onClick={() => {
+                onUserItemClick(user.login);
+              }}
+            >
+              {user.login}
+            </ListItem>
+          ))}
+        </List>
+      </Container>
     </Layout>
   );
 };
 
+const Container = styled.div`
+  padding-inline: 32px;
+
+  @media ${DEVICES.mobile} {
+    padding-inline: 16px;
+  }
+`;
 const List = styled.div`
   display: flex;
   flex-direction: column;

@@ -1,4 +1,6 @@
 export const toFormattedThousands = (number: number, precision = 1) => {
+  if (number < 1000 && number > -1000) return number;
+
   const map = [
     { suffix: "T", threshold: 1e12 },
     { suffix: "B", threshold: 1e9 },
