@@ -3,7 +3,7 @@
 ## 프로젝트 소개
 <img width="1076" alt="20231104_183451" src="https://github.com/piouy001/gitdong/assets/60591071/813da0f5-91d2-468b-b49f-b74e70a72a41">
 Github 유저를 찾아볼 수 있는 개인 프로젝트입니다.
-평소에는 webpack으로 react환경을 구축했는데 이번에 vite장점을 알아보고자 vite로 환경을 구축해봤습니다.
+평소에는 webpack으로 react환경을 구축했는데 이번에 vite장점을 알아보고자 vite로 환경을 구축했습니다.
 
 배포주소 : https://gitdong.vercel.app/
 
@@ -92,4 +92,4 @@ media query에서 사용하는 값, 자주 사용하는 text style 등을 정의
 
 ### asset
 
-font, svg를 정의합니다.
+fonts, svg를 정의합니다.
