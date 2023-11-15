@@ -49,10 +49,10 @@ React, Vite, Typescript, React Query, Context API
 
 1. 재사용 할 수 있는 component들 보관합니다.
 2. UserScreen 폴더에는 UserScreen과 interactor, presenter, router 이렇게 4개가 한 세트로 들어있습니다. 각 파일은 다음과 같이 역할을 맡습니다.
-    1. interactor : 데이터를 fetch합니다. (ex: react query)
-    2. presenter : 화면에서 사용되는 모든 비즈니스 로직을 정의합니다.
-    3. router : 화면에서 사용되는 route(navigate)로직을 정의합니다.
-    4. view(UserScreen) :화면과 관련된 view를 작성합니다. 
+- Interactor : 비즈니스 로직을 담당하며, API 통신 등의 네트워킹이나 data에 대한 처리를 하고 결과를 Presenter에 전달합니다.
+- Presenter : Presenter는 View, Router, Interactor에 대한 의존성을 가지고 있으며, View에 Event를 전달받아 Interactor를 통해 처리하고 View에 data와 함께 UI  Update요청을 보내거나 Router를 통한 화면 이동을 처리합니다.
+- Router : 와이어프레임이라고도 불리며 화면 전환과 각 구성요소의 의존성 주입을 처리합니다.
+- View :View는 ViewController를 의미하며 UI와 관련된 처리만합니다.  Presenter에 대한 의존성을 가지고 있으며 viewDidLoad 같은 LifeCycle과 button touch 등의 Event에 대한 처리를 Presenter에게 위임하고 Presenter의 요청을 받아 UI를 Update합니다. 말 그대로 UI만 담당한다고 보면 됩니다.
 
 ### services
 
