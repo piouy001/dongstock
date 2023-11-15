@@ -27,11 +27,6 @@ body{
   color: ${({ theme }) => theme.onBackground};
 }
 
-::-webkit-scrollbar-thumb {
-  border-radius: 2px;
-  background: #ccc;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
 }
