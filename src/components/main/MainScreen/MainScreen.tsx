@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Layout from "components/layout/Layout";
 import FollowPannel from "components/user/FollowPannel";
 
+import { typo_24_semibold } from "styles/Typo";
+
 import usePresenter from "./MainScreen.presenter";
 import useRouter from "./MainScreen.router";
 
@@ -18,6 +20,9 @@ const MainScreen = () => {
   );
 };
 
-const Title = styled.h1``;
+const Title = styled.h1`
+  padding-block: 12px;
+  ${typo_24_semibold};
+`;
 
 export default MainScreen;
