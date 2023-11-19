@@ -25,11 +25,11 @@ React, Vite, Typescript, React Query, Context API
 
 ## 📹유저 시나리오
 
-### 메인 페이지 `/`
-[메인페이지 구현](https://github.com/piouy001/gitdong/issues/4)
-
 ### 상세 페이지 `/[username]`
 [상세페이지 구현](https://github.com/piouy001/gitdong/issues/5)
+
+### 메인 페이지 `/`
+[메인페이지 구현](https://github.com/piouy001/gitdong/issues/4)
 
 ## ⚙️실행방법
 
@@ -41,4 +41,6 @@ yarn dev
 
 ### App 실행
 
-`yarn dev`
+```
+yarn dev
+```
