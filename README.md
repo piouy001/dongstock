@@ -21,7 +21,7 @@ React, Vite, Typescript, React Query, Context API
 [폴더 구조](https://github.com/piouy001/gitdong/issues/2)
 
 ### 레이아웃
-[헤더 구현](https://github.com/piouy001/gitdong/issues/3)
+[다크모드 구현](https://github.com/piouy001/gitdong/issues/3)
 
 ## 📹유저 시나리오
 
