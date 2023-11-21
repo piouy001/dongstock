@@ -3,11 +3,6 @@
 
 <img width="1076" alt="20231104_183451" src="https://github.com/piouy001/gitdong/assets/60591071/813da0f5-91d2-468b-b49f-b74e70a72a41">
 
-## 🤔배경
-경력기술서만으로는 제가 어떤식으로 코드를 작성하는지를 보여줄 수 없다고 생각합니다.
-
-그렇기에 만약 React + Typescript로 프로젝트를 진행하게 된다면 어떻게 구성하고 어떻게 개발하는지 보여드리고자 개발하게 되었습니다.
-
 ## 👀기술 스택
 
 React, Vite, Typescript, React Query, Context API
